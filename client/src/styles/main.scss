@@ -1,0 +1,14 @@
+.App {
+  main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+
+    position: relative;
+    background: url("../img/6e9794bcedeecf5a8f8f41338a2a7345.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 50px);
+  }
+}

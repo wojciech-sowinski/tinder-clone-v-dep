@@ -1,0 +1,411 @@
+nav.main-nav {
+  background-color: #000;
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+  .burger-button {
+    display: none;
+  }
+  .login-button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    .user-bar {
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      color: #fff;
+      white-space: nowrap;
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 174, 0);
+      }
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .nav-logo-container {
+    display: flex;
+    column-gap: 5px;
+    height: 50px;
+
+    span {
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  ul {
+    padding: 0 20px;
+    display: flex;
+    column-gap: 40px;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    .login-button,
+    .register-button {
+      display: none;
+    }
+    li {
+      a {
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 100;
+        color: rgb(185, 185, 185);
+
+        &.active {
+          color: rgb(201, 0, 50);
+        }
+      }
+    }
+  }
+
+  .new-message-counter {
+    text-decoration: none;
+    div {
+      aspect-ratio: 1/1;
+      width: 2rem;
+      position: relative;
+      padding: 0 10px;
+      background-color: rgb(201, 0, 50);
+      border-radius: 50px;
+
+      align-items: center;
+      color: #000;
+
+      justify-content: center;
+      animation: pulse 2s ease 0s infinite normal forwards;
+
+      span {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
+      }
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        aspect-ratio: 1/1;
+        color: rgb(0, 0, 0);
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  nav.main-nav {
+    background-color: #000;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    z-index: 12;
+
+    align-items: center;
+
+    .burger-button {
+      display: block;
+      color: #fff;
+      padding: 5px;
+      font-size: 1.4rem;
+    }
+    .login-button-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      column-gap: 20px;
+      font-size: 0.7rem;
+      font-weight: 300;
+      .login-button {
+        display: none;
+      }
+      .user-bar {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        color: #fff;
+        white-space: nowrap;
+        a {
+          text-decoration: none;
+          color: rgb(255, 174, 0);
+        }
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .nav-logo-container {
+      display: flex;
+      column-gap: 5px;
+      align-items: center;
+      height: 20px;
+
+      span {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.7rem;
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    ul {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transform: translateY(100%);
+      padding: 50px 10px;
+      margin: 50px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      list-style: none;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #000;
+      z-index: 1;
+      transition: 0.5s;
+      &.show {
+        transform: translateY(0%);
+        transition: 0.5s;
+      }
+
+      .login-button,
+      .register-button {
+        display: block;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          font-size: 1.3rem;
+          font-weight: 100;
+          color: rgb(185, 185, 185);
+
+          &.active {
+            color: rgb(201, 0, 50);
+          }
+        }
+      }
+    }
+
+    .new-message-counter {
+      text-decoration: none;
+      div {
+        aspect-ratio: 1/1;
+        width: 1.5rem;
+        position: relative;
+        padding: 0 10px;
+        background-color: rgb(201, 0, 50);
+        border-radius: 50px;
+
+        align-items: center;
+        color: #000;
+
+        justify-content: center;
+        animation: pulse 2s ease 0s infinite normal forwards;
+
+        span {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1rem;
+        }
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 70%;
+          aspect-ratio: 1/1;
+          color: rgb(0, 0, 0);
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  nav.main-nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    z-index: 12;
+
+    align-items: center;
+
+    .burger-button {
+      display: block;
+      color: #fff;
+      padding: 5px;
+      font-size: 1.4rem;
+    }
+    .login-button-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      column-gap: 20px;
+      font-size: 0.7rem;
+      font-weight: 300;
+      .login-button {
+        display: none;
+      }
+      .user-bar {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        color: #fff;
+        white-space: nowrap;
+        a {
+          text-decoration: none;
+          color: rgb(255, 174, 0);
+        }
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .nav-logo-container {
+      display: flex;
+      column-gap: 5px;
+      align-items: center;
+      height: 20px;
+
+      span {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.7rem;
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    ul {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transform: translateY(100%);
+      padding: 50px 10px;
+      margin: 50px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      list-style: none;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #000;
+      z-index: 1;
+      transition: 0.5s;
+      &.show {
+        transform: translateY(0%);
+        transition: 0.5s;
+      }
+
+      .login-button,
+      .register-button {
+        display: block;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          font-size: 1.3rem;
+          font-weight: 100;
+          color: rgb(185, 185, 185);
+
+          &.active {
+            color: rgb(201, 0, 50);
+          }
+        }
+      }
+    }
+
+    .new-message-counter {
+      text-decoration: none;
+      div {
+        aspect-ratio: 1/1;
+        width: 1.5rem;
+        position: relative;
+        padding: 0 10px;
+        background-color: rgb(201, 0, 50);
+        border-radius: 50px;
+
+        align-items: center;
+        color: #000;
+
+        justify-content: center;
+        animation: pulse 2s ease 0s infinite normal forwards;
+
+        span {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1rem;
+        }
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 70%;
+          aspect-ratio: 1/1;
+          color: rgb(0, 0, 0);
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.sign-in-button,
+.login-button,
+.submit-button,
+.register-button,
+.redirect-button {
+  padding: 10px 30px;
+  margin: 10px 0px;
+  font-size: 1rem;
+  font-weight: 300;
+  background: linear-gradient(
+    45deg,
+    rgb(201, 0, 50),
+    rgb(201, 0, 50),
+    rgb(255, 174, 0)
+  );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  color: rgb(255, 255, 255);
+  border: none !important;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(201, 0, 50);
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+button.submit-button.green-button{
+  background: rgb(0, 201, 23);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

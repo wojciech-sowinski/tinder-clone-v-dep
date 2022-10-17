@@ -1,0 +1,10 @@
+.drag-and-drop {
+  border: dashed 2px #777777 !important;
+  padding: 20px 20px;
+  height: 70px !important;
+  svg {
+    path {
+      fill: rgb(201, 0, 50);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "short_name": "Matchy Matchy®",
+  "name": "Find your match with Matchy Matchy.",
+  "icons": [
+    {
+      "src": "/logo-red-thumb.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo-red-thumb.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/media/logo-red.6b6f72b1816d707c6743.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff"
+}
