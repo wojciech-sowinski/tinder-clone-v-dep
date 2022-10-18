@@ -29,7 +29,7 @@ app.listen(serverPort)
 
 
 
-mongoose.connect(mongoDbUrl)
+mongoose.connect(process.env.DB_URL)
 
 
 const corsOption = {
