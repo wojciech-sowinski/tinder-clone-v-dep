@@ -27,17 +27,12 @@ function UploadImg() {
 
         setUploading(true)
 
+        // data: formData,
         const compressedFile = await imageCompression(file, compresionOptions);
         const formData = new FormData();
         formData.append('image', compressedFile);
         console.log('upl img: ', config.serverUrl + 'upload');
         axios.post(config.serverUrl + 'upload', {
-            data: formData,
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Credentials": true,
-            },
-            // headers: { 'Content-type': 'multipart/form-data' },
             withCredentials: true
         }
         )
