@@ -283,4 +283,25 @@ User.findByIdAndUpdate(req.session.authToken,{
 
 })
 
+router.post('/upload',upload.single("image"),(req,res)=>{
+
+
+    if(req.session.authToken){
+        
+        res.status(200).send('ok')
+    }else{
+        res.status(200).send('fail')
+
+    }
+
+    // res.status(200).json({
+    //     body: req.body,
+    //     query: req.query,
+    //     cookies: req.cookies,
+    //     auth: auth,
+    //     // filename:req.file.filename
+
+    //   });
+})
+
 module.exports = router
