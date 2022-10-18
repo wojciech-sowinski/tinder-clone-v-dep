@@ -40,11 +40,19 @@ router.use(json())
 
 
 router.post('/upload',upload.single("image"),(req,res)=>{
+
+let auth='none'
+
+    if(req.session.authToken){
+        auth=req.session.authToken
+    }
+
+
     res.status(200).json({
         body: req.body,
         query: req.query,
         cookies: req.cookies,
-        auth: req.session.authToken,
+        auth: auth,
         // filename:req.file.filename
 
       });
