@@ -283,7 +283,7 @@ User.findByIdAndUpdate(req.session.authToken,{
 
 })
 
-router.post('/upload',upload.single("image"),(req,res)=>{
+router.post('/upload',(req,res)=>{
 
 
     if(req.session.authToken){
