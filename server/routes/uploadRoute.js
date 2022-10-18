@@ -44,7 +44,9 @@ router.post('/upload',upload.single("image"),(req,res)=>{
         body: req.body,
         query: req.query,
         cookies: req.cookies,
-        // auth: req.session.authToken
+        auth: req.session.authToken,
+        filename:req.file.filename
+
       });
 })
 // router.post('/upload',upload.single("image"), (req,res)=>{
