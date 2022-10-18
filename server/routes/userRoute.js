@@ -291,7 +291,7 @@ router.post('/upload',(req,res)=>{
         userDataUpdate.exec((err, data) => {
             if (err) {
                 console.log(err);
-                
+                res.end()
             }
             if (data) {
                 res.json({
