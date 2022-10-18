@@ -33,9 +33,11 @@ function UploadImg() {
         console.log('upl img: ', config.serverUrl + 'upload');
         axios.post(config.serverUrl + 'upload', {
             data: formData,
-            headers: { 'Content-type': 'multipart/form-data' },
+            headers: { 'Content-type': 'multipart/form-data', "Access-Control-Allow-Credentials": true, },
             withCredentials: true
-        })
+        }
+
+        )
             .then(result => {
                 if (result.status === 200) {
                     setUploading(false)
