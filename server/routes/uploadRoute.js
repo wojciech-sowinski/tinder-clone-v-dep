@@ -40,12 +40,11 @@ router.use(json())
 
 
 router.post('/upload',(req,res)=>{
-    res.send('test ok')
-    // res.status(200).json({
-    //     body: request.body,
-    //     query: request.query,
-    //     cookies: request.cookies,
-    //   });
+    res.status(200).json({
+        body: request.body,
+        query: request.query,
+        cookies: request.cookies,
+      });
 })
 // router.post('/upload',upload.single("image"), (req,res)=>{
 //     const newImgUrl = req.protocol + '://' + req.get('host') + '/userimgs/' + req.file.filename
