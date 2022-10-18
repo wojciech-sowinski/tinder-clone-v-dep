@@ -285,15 +285,22 @@ User.findByIdAndUpdate(req.session.authToken,{
 
 router.post('/upload',(req,res)=>{
 
-
-    if(req.session.authToken){
+    if (req.session.authToken) {
         
-        res.status(200).send('ok')
-    }else{
-        res.status(200).send('fail')
-
+        const userDataUpdate = User.findByIdAndUpdate(req.session.authToken, {})
+        userDataUpdate.exec((err, data) => {
+            if (err) {
+                console.log(err);
+                
+            }
+            if (data) {
+                res.json({
+                    result: 'user data updated'
+                })
+            }
+            
+        })
     }
-
     // res.status(200).json({
     //     body: req.body,
     //     query: req.query,
