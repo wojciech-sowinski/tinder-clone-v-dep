@@ -31,11 +31,12 @@ function UploadImg() {
         const compressedFile = await imageCompression(file, compresionOptions);
         const formData = new FormData();
         formData.append('image', compressedFile);
-        console.log('upl img: ', config.serverUrl + 'upload');
-        axios.post(config.serverUrl + 'upload', {
-            withCredentials: true
-        }
-        )
+
+        await axios.post(config.serverUrl + 'upload',
+
+            {
+                withCredentials: true
+            })
             .then(result => {
                 if (result.status === 200) {
                     setUploading(false)
