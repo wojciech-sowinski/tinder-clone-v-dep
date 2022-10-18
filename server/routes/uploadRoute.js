@@ -39,38 +39,31 @@ router.use(json())
 
 
 
-
-router.post('/upload',upload.single("image"), (req,res)=>{
-
-
-    const newImgUrl = req.protocol + '://' + req.get('host') + '/userimgs/' + req.file.filename
-    
-    
-   
-    if (req.session.authToken) {     
-     
-        const userDataUpdate = User.findByIdAndUpdate(req.session.authToken, {
-            $push: {
-                imgUrl:newImgUrl
-            }
-        })
-        userDataUpdate.exec((err, data) => {
-            if (err) {
-                res.json({uploadResult:false})              
-            }
-            if (data) {
-               res.json({uploadResult:true})            
-            }            
-        })
-    }
-  
-
-
-
-   
-
-
+router.post('/upload',(req,res)=>{
+    res.status(200).json({
+        body: request.body,
+        query: request.query,
+        cookies: request.cookies,
+      });
 })
+// router.post('/upload',upload.single("image"), (req,res)=>{
+//     const newImgUrl = req.protocol + '://' + req.get('host') + '/userimgs/' + req.file.filename
+//     if (req.session.authToken) {     
+//         const userDataUpdate = User.findByIdAndUpdate(req.session.authToken, {
+//             $push: {
+//                 imgUrl:newImgUrl
+//             }
+//         })
+//         userDataUpdate.exec((err, data) => {
+//             if (err) {
+//                 res.json({uploadResult:false})              
+//             }
+//             if (data) {
+//                res.json({uploadResult:true})            
+//             }            
+//         })
+//     }
+// })
 
 
 module.exports =router
