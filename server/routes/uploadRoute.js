@@ -26,13 +26,15 @@ const fileStorageEngine = multer.diskStorage({
 const upload = multer({
     storage:fileStorageEngine,
     fileFilter: (req,file,cb)=>{
-        if (!whitelist.includes(file.mimetype)||!req.session.authToken) {
+        if (!whitelist.includes(file.mimetype)) {
             return cb(null, false)            
           }      
           cb(null, true)
     }
     
 })
+
+// ||!req.session.authToken
 
 
 router.use(json())
@@ -47,7 +49,7 @@ let auth='none'
         auth=req.session.authToken
     }
 
-    res.status(200).send(auth)
+    res.status(200).send(req.file.filename)
     // res.status(200).json({
     //     body: req.body,
     //     query: req.query,
