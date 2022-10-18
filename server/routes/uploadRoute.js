@@ -47,15 +47,15 @@ let auth='none'
         auth=req.session.authToken
     }
 
+    res.status(200).send(auth)
+    // res.status(200).json({
+    //     body: req.body,
+    //     query: req.query,
+    //     cookies: req.cookies,
+    //     auth: auth,
+    //     // filename:req.file.filename
 
-    res.status(200).json({
-        body: req.body,
-        query: req.query,
-        cookies: req.cookies,
-        auth: auth,
-        // filename:req.file.filename
-
-      });
+    //   });
 })
 // router.post('/upload',upload.single("image"), (req,res)=>{
 //     const newImgUrl = req.protocol + '://' + req.get('host') + '/userimgs/' + req.file.filename
