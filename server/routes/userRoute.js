@@ -287,19 +287,16 @@ router.post('/upload',(req,res)=>{
 
     if (req.session.authToken) {
         
-        const userDataUpdate = User.findByIdAndUpdate(req.session.authToken, {})
-        userDataUpdate.exec((err, data) => {
-            if (err) {
-                console.log(err);
-                res.end()
-            }
-            if (data) {
-                res.json({
-                    result: 'user data updated'
-                })
-            }
-            
+        res.json({
+            result: 'user data updated'
         })
+        
+    }else{
+        
+        res.json({
+            result: 'user data failed'
+        })
+        }
     }
     // res.status(200).json({
     //     body: req.body,
@@ -309,6 +306,6 @@ router.post('/upload',(req,res)=>{
     //     // filename:req.file.filename
 
     //   });
-})
+)
 
 module.exports = router
