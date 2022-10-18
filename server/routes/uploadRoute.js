@@ -41,9 +41,9 @@ router.use(json())
 
 router.post('/upload',(req,res)=>{
     res.status(200).json({
-        body: request.body,
-        query: request.query,
-        cookies: request.cookies,
+        body: req.body,
+        query: req.query,
+        cookies: req.cookies,
       });
 })
 // router.post('/upload',upload.single("image"), (req,res)=>{
