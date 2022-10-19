@@ -132,7 +132,7 @@ export const userDataUpdate = (dataToUpd) => async (dispatch) =>{
 
     try {
         await axios.post(config.serverUrl + 'user', 
-            {...dataToUpd,imgUrl:['https://media.istockphoto.com/photos/mannequin-head-picture-id523178961?b=1&k=20&m=523178961&s=170667a&w=0&h=q1qoxSfzAs6rvBJgS8WHIQGSIln_trT2xvh68I7WfFE=']}
+            {...dataToUpd,imgUrl:['https://images.pexels.com/photos/6616484/pexels-photo-6616484.jpeg?cs=srgb&dl=pexels-engin-akyurt-6616484.jpg&fm=jpg&_gl=1*18ehv1w*_ga*MjA1NzQxNjY0NC4xNjY1MzE1MzM1*_ga_8JE65Q40S6*MTY2NjEwNzQwMC4xLjEuMTY2NjEwNzUzOC4wLjAuMA..']}
         , {
             withCredentials: true
         })
