@@ -14,7 +14,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 const OnBoardPage = () => {
 
     const { userData, logged, userDataLoading } = useSelector(state => state.userData)
-    
+
 
     const { firstName,
         birthDate,
@@ -135,7 +135,7 @@ const OnBoardPage = () => {
         setTimeout(() => {
             setUpdateResult('Submit Changes')
         }, 3000);
-        
+
     }
 
 
@@ -232,13 +232,13 @@ const OnBoardPage = () => {
                         </div>
                         <div>
 
-                            {<UploadImg />}
+                            {/* {<UploadImg />} */}
                         </div>
                         <div>
                             <SliderWithThumb userImages={userData.imgUrl} editable={true} />
                         </div>
                         <div style={{ textAlign: "center" }}>
-                            <button className={`submit-button ${updateResult==='Changes Saved' ? 'green-button' : ''}`} type="submit">{updateResult}</button>
+                            <button className={`submit-button ${updateResult === 'Changes Saved' ? 'green-button' : ''}`} type="submit">{updateResult}</button>
                         </div>
                     </div>
                 </form>
