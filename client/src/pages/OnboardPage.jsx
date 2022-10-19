@@ -14,14 +14,16 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 const OnBoardPage = () => {
 
     const { userData, logged, userDataLoading } = useSelector(state => state.userData)
-
+    const [imgUrl, setImgUrl] = useState([])
+    const [newImgUrl, setNewImgUrl] = useState('')
 
     const { firstName,
         birthDate,
         gender,
         interest,
         aboutMe,
-        email
+        email,
+
     } = userData
 
     const dispatch = useDispatch()
@@ -130,11 +132,18 @@ const OnBoardPage = () => {
     const submitHandle = (e) => {
         e.preventDefault()
         const { firstName, birthDate, gender, interest, aboutMe, email } = formData
-        dispatch(userDataUpdate({ firstName, birthDate, gender, interest, aboutMe, email }))
+        dispatch(userDataUpdate({ firstName, birthDate, gender, interest, aboutMe, email, imgUrl }))
         setUpdateResult('Changes Saved')
         setTimeout(() => {
             setUpdateResult('Submit Changes')
         }, 3000);
+
+    }
+
+    const addImg = () => {
+
+        setImgUrl(prev => [...prev, newImgUrl])
+
 
     }
 
@@ -231,7 +240,19 @@ const OnBoardPage = () => {
                             </span>
                         </div>
                         <div>
-
+                            <div>
+                                <label>Paste Your profile image URL</label>
+                            </div>
+                            <div>
+                                <input type="string"
+                                    value={newImgUrl}
+                                    onChange={(e) => { setNewImgUrl(e.currentTarget.value) }}
+                                />
+                                <button
+                                    name="addimg"
+                                    onClick={addImg}
+                                    className='active'>Add</button>
+                            </div>
                             {/* {<UploadImg />} */}
                         </div>
                         <div>
