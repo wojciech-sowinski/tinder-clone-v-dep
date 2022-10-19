@@ -14,7 +14,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 const OnBoardPage = () => {
 
     const { userData, logged, userDataLoading } = useSelector(state => state.userData)
-    const [imgUrl, setImgUrl] = useState([])
+    const [imgUrl, setImgUrl] = useState([...userData.imgUrl])
     const [newImgUrl, setNewImgUrl] = useState('')
 
     const { firstName,
