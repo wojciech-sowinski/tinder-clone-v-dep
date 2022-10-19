@@ -143,7 +143,7 @@ const OnBoardPage = () => {
     const addImg = () => {
 
         setImgUrl(prev => [...prev, newImgUrl])
-
+        dispatch(userDataUpdate({ firstName, birthDate, gender, interest, aboutMe, email, imgUrl }))
 
     }
 
